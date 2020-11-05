@@ -7,24 +7,39 @@
   </head>
   <body>
     <script>
-      var obj1 = { name: "GUVI", class: "FS" };
-      var obj2 = { class: "FS", name: "GUVI" };
-      console.log("compare two JSON  : " + CompareObjects(obj1, obj2));
-      function CompareObjects(o1, o2) {
-        var keys1 = Object.keys(o1);
-        var keys2 = Object.keys(o2);
-        if (keys1.length !== keys2.length) {
-          return false;
-        }
+      var securityQuestions = [
+ {
+ question: "What was your first pet's name?",
+ expectedAnswer: "FlufferNutter"
+ },
+ {
+ question: "What was the model year of your first car?",
+ expectedAnswer: "1985"
+ },
+ {
+ question: "What city were you born in?",
+ expectedAnswer: "NYC"
+ }
+]
+function chksecurityQuestions(securityQuestions,question,answer) {
+for(let i=0;i<securityQuestions.length;i++)
+if(question == securityQuestions[i].question)
+	if(securityQuestions[i].expectedAnswer==answer)
+		return true;
+	
+return false;
 
-        for (var key in keys1) {
-          if (o1[key] !== o2[key]) {
-            return false;
-          }
-        }
-
-        return true;
-      }
+}
+//Test case1:
+var ques = "What was your first pet's name?";
+var ans  =  "FlufferNutter";
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status); // true
+//Test case2:
+var ques = "What was your first pet's name?";
+var ans  =  "DufferNutter";
+var status = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(status); // flase
     </script>
   </body>
 </html>
