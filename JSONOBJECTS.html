@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluffy Cat</title>
+  </head>
+  <body>
+    <script>
+      var cat = {
+        name: "Fluffy",
+        activities: ["play", "eat cat food"],
+        catFriends: [
+          {
+            name: "bar",
+            activities: ["be grumpy", "eat bread omblet"],
+            weight: 8,
+            furcolor: "white",
+          },
+          {
+            name: "foo",
+            activities: ["sleep", "pre-sleep naps"],
+            weight: 3,
+          },
+        ],
+      };
+      console.log("Actual Cat data");
+      console.log(cat);
+      console.log("TASK1-Add height and weight to Fluffy");
+      cat["height"] = 100;
+      cat["weight"] = 50;
+      console.log(cat);
+       console.log("TASK2- Fluffy name is spelled wrongly. Update it to Fluffyy" );
+      cat["name"] = "Fluffyy";
+      console.log(cat);
+      
+
+      console.log("TASK -3 : List all the activities of Fluffyy’s catFriends");
+      for (var i in cat) {
+        for (var j in cat[i]) {
+          console.log(cat[i][j]["activities"]);
+        }
+      }
+      
+
+      console.log("TASK4-Print the catFriends names");
+      for (var i in cat) {
+        for (var j in cat[i]) {
+          console.log(cat[i][j].name);
+        }
+      }
+      
+
+      console.log("TASK5-Print the total weight of catFriends");
+      var weight = 0;
+      for (var i in cat) {
+        for (var j in cat[i]) {
+          if (cat[i][j].weight != undefined) {
+            weight += Number(cat[i][j].weight);
+            // console.log("w : " + cat[i][j].weight);
+          }
+        }
+      }
+      console.log("total cat friends weight : " + weight);
+    
+      console.log("TASK6-Print the total activities of all cats (op:6)");
+      var activitiesCount = 0;
+      for (var i in cat) {
+        activitiesCount = cat.activities.length;
+        for (var j in cat.catFriends) {
+          activitiesCount += Number(cat.catFriends[j].activities.length);
+          // console.log("w : " + cat[i][j].weight);
+        }
+      }
+      console.log("total activities of all cats : " + activitiesCount);
+      
+
+      console.log("TASK7-Add 2 more activities to bar & foo cats");
+      for (var i = 0; i < cat.catFriends.length; i++) {
+        cat.catFriends[i].activities.push("activity - 1");
+        cat.catFriends[i].activities.push("activity - 2");
+        // console.log("w : " + cat[i][j].weight);
+      }
+      console.log(cat);
+      
+
+      console.log("TASK8-Update the fur color of bar");
+      for (var i = 0; i < cat.catFriends.length; i++) {
+        if (cat.catFriends[i].name === "bar") {
+          cat.catFriends[i].furcolor = "pink";
+        }
+      }
+      console.log(cat);
+     
+    </script>
+  </body>
+</html>
