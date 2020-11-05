@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROBLEM 1</title>
+  </head>
+  <body>
+    <script>
+      var object = { name: "RajiniKanth", age: 33, hasPets: false };
+      printAllObjectValue(object);
+      function printAllObjectValue(obj) {
+        var array = [];
+        for (var i in obj) array.push(obj[i]);
+        console.log(array);
+      }
+    </script>
+  </body>
+</html>
