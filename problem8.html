@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare TWO JSON Objectes</title>
+  </head>
+  <body>
+    <script>
+      var obj1 = { name: "GUVI", class: "FS" };
+      var obj2 = { class: "FS", name: "GUVI" };
+      console.log("compare two JSON  : " + CompareObjects(obj1, obj2));
+      function CompareObjects(o1, o2) {
+        var keys1 = Object.keys(o1);
+        var keys2 = Object.keys(o2);
+        if (keys1.length !== keys2.length) {
+          return false;
+        }
+
+        for (var key in keys1) {
+          if (o1[key] !== o2[key]) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
