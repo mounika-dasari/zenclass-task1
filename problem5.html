@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROBLEM 5</title>
+  </head>
+  <body>
+    <script>
+      var array = [
+        ["make", "Ford"],
+        ["model", "Mustang"],
+        ["year", 1964],
+      ];
+      console.log(fromListToObject(array));
+      function fromListToObject(obj) {
+        var myArray = {};
+        for (var i = 0; i < obj.length; i++) {
+          myArray[obj[i][0]] = obj[i][1];
+        }
+        return JSON.stringify(myArray);
+      }
+    </script>
+  </body>
+</html>
