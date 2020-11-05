@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROBLEM 3</title>
+  </head>
+  <body>
+    <script>
+      var object = { name: "ISRO", age: 35, role: "Scientist" };
+      console.log(convertObjectToList(object));
+      function convertObjectToList(obj) {
+        var array = [];
+        for (var i in obj) array.push([i, obj[i]]);
+        return array;
+      }
+    </script>
+  </body>
+</html>
