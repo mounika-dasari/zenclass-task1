@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROBLEM 6</title>
+  </head>
+  <body>
+    <script>
+      var array = [
+        [
+          ["firstName", "Vasanth"],
+          ["lastName", "Raja"],
+          ["age", 24],
+          ["role", "JSWizard"],
+        ],
+        [
+          ["firstName", "Sri"],
+          ["lastName", "Devi"],
+          ["age", 28],
+          ["role", "Coder"],
+        ],
+      ];
+      console.log(transformGeekData(array));
+      function transformGeekData(obj) {
+        var myArray = [];
+        for (var i = 0; i < obj.length; i++) {
+          var innerArray = {};
+          for (var j = 0; j < obj[i].length; j++) {
+            innerArray[obj[0][j][0]] = obj[0][j][1];
+          }
+          myArray.push(innerArray);
+        }
+        return JSON.stringify(myArray);
+      }
+    </script>
+  </body>
+</html>
