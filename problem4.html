@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROBLEM 4</title>
+  </head>
+  <body>
+    <script>
+      var array = ["GUVI", "I", "am", "Geek"];
+      console.log(transformFirstAndLast(array));
+      function transformFirstAndLast(obj) {
+        var myArray = {};
+        myArray[obj[0]] = obj[obj.length - 1];
+        return JSON.stringify(myArray);
+      }
+    </script>
+  </body>
+</html>
